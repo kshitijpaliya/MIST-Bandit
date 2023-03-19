@@ -1,0 +1,13 @@
+Level 5
+Using password that we got in Level 4, we login as bandit4
+" ssh bandit4@bandit.labs.overthewire.org -p 2220 "
+I was stuck at this level as I was not able to understand what to do after listing all the files in the inhere directory i.e. I didnt understood what it meant by human readable file. SO here i took the help from youtube tutorial.
+" find . -type f | xargs file "
+So we get a file Which contains ASCII text i.e. human readable text. 
+" cat ./-file07 "
+Use this password to lgin into next level. 
+"exit"
+
+Level 6
+lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR
+And I am again stuck here. 
