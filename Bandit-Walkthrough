@@ -1,0 +1,39 @@
+I am completely new to this. I have tried doing some part which I was able to do it on my own and have also taken some help from youtube tutorials (https://www.youtube.com/playlist?list=PLBf0hzazHTGOIn_vuuuCzRFVhYiDBnJID ) as well. 
+
+Level 0 
+Log into the game using SSH to the given server. 
+ssh bandit0@bandit.labs.overthewire.org -p 2220
+Username and Password : bandit0, Once Logged in the level 0 is completed.
+
+
+Level 1
+" ls " command is used which lists all the files present. readme file is shown after the use of ls command. 
+Now we use a " cat readme " command that displays the password in the form of string stored in readme. Using this password we login into bandit1 using ssh
+" ssh bandit1@bandit,overthewire.org -p 2220 "
+Enter the password found above in the readme file. 
+
+Level 2
+Now after we login into bandit1, we have our password stored in a file called - .
+" ssh bandit1@bandit.labs.overthewire.org -p 2220 "
+1st we use ls command to list the - file.
+2nd we use the cat command to display the string present in the - file. 
+(but for - file we write the command as follows cat ./- )
+Logout of bandit1
+" exit " command is used. 
+
+Level 3
+Login into bandit2, whose password we have got from the - file. 
+" ssh bandit2@bandit.labs.overthewire.org -p 2220 "
+use " ls -all " command to list all the files, where we will find spaces in this filename.
+use " cat 'spaces in this filename' " ((when the name of file has multiple word use '' ))
+Now we got the password for level 4, so we logout of bandit2.
+
+
+Level 4
+Login into bandit3 using the above found password.
+" ssh bandit3@bandit.labs.overthewire.org -p 2220 "
+" ls -all " , after using this we see inhere directory
+Now we use " cd inhere " for shwing the content present in a directory.
+Inside of whcih we find a .hidden file whcih has our required password. 
+" cat .hidden " 
+"exit"
