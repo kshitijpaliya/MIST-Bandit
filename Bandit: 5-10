@@ -2,12 +2,54 @@ Level 5
 Using password that we got in Level 4, we login as bandit4
 " ssh bandit4@bandit.labs.overthewire.org -p 2220 "
 I was stuck at this level as I was not able to understand what to do after listing all the files in the inhere directory i.e. I didnt understood what it meant by human readable file. SO here i took the help from youtube tutorial.
-" find . -type f | xargs file "
+" find . -type f | xargs file "  (f=files)
 So we get a file Which contains ASCII text i.e. human readable text. 
 " cat ./-file07 "
 Use this password to lgin into next level. 
 "exit"
 
 Level 6
-lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR
-And I am again stuck here. 
+lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR is the password for Level 6, login into bandit5 using this.
+" ssh bandit5@bandit.labs.overthewire.org -p 2220 "
+I was again stuck here, so I took help from the youtube tutorial.
+" ls ": lists the inhere directory 
+" cd inhere " 
+" find . -type f -size 1033c ! -executable " : is the command used according to the conditions given in the level.
+
+Level 7
+P4L4vucdmLnm8I7Vl7jG1ApGSfjYKqJU is the password for Level 7, login into bandit6 using this.
+" ssh bandit6@bandit.labs.overthewire.org -p 2220 "
+The next command used was - 
+" find / -type f -use bandit7 -group bandit6 -size 33c "
+Look for the .password file in the list that pops up. 
+/var/lib/dpkg/info/bandit7.password
+cat this file to get the password for the next level. 
+" cat /var/lib/dpkg/info/bandit7.password "
+
+Level 8
+z7WtoNQU2XfjmMtWA8u5rN4vzqu4v99S is the password for Level 8, login into bandit7 using this.
+" ssh bandit7@bandit.labs.overthewire.org -p 2220 "
+" ls -all "
+" cat data.txt " shows a larger number of strings that are present in there.
+So we need to find the string for millionth whcih is our password for next level.
+For this we use grep command (which searches a string in a group of files).
+" strings data.txt | grep "millionth" "
+We ge the string millionth which has our password for the next level.
+
+Level 9
+TESKZC0XvTetK0S9xNwm25STk5iWrBvP is the password for Level 9, login into bandit8 using this.
+" ssh bandit8@bandit.labs.overthewire.org -p 2220 "
+" ls -all "
+" cat data.txt "
+Then we use the sort command which sorts the data.
+" sort data.txt "
+But we need the text which has appeared on;y once. For which we use the " uniq " command which omits the repeated line and "uniq -c" (c=count) will show us the number of times that line appeatred, where we find the text which appeared only once.
+" sort data.txt | uniq -c "
+1 EN632PlfYiZbn3PhVK3XOGSlNInNE00t is the password for next level.
+
+Level 10
+EN632PlfYiZbn3PhVK3XOGSlNInNE00t is the password for Level 10, login into bandi9 using this.
+" ssh bandit9@bandit.labs.overthewire.org -p 2220 "
+" ls -all "
+" strings data.txt | grep "=" "
+The password will be ahown after a number of == signs.
