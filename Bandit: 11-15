@@ -1,0 +1,9 @@
+Level 11
+G7w8LIi6J3kTb8A7j9LgrywtEUlyyp6s is the password for Level 11, login into bandi9 using this.
+" ssh bandit10@bandit.labs.overthewire.org -p 2220 "
+" ls -all "
+" cat data.txt "
+Base64 is used to encode binary data as ASCII or text / encoding or decoding data to print the standard output .
+" base64 -d data.txt " ( d= decode )
+The password is 6zPeziLdR2RKNdNYFNb6nVCKzphlXHBM . 
+
